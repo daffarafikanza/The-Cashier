@@ -1,26 +1,27 @@
 # The-Cashier
 
-Aplikasi sederhana ini mencakup fungsi perhitungan nilai pertukaran mata uang dari dollar ke rupiah. Jadi 1$ = Rp. 15.000
+Aplikasi kasir sederhana ini berfungsi untuk melakukan perhitungan transaksi barang/jasa dengan menginputkan, nama item, jumlah, dan harga.
 
 ## Scope & Functionalities
 
-- User bisa memasukkan angka yang mereka inginkan
-- User dapat menyentuh tombol hitung
-- User akan mendapatkan info `INVALID` jika yang dimasukkan selain angka
+- User bisa memasukkan nama item, jumlah, dan harga
+- User dapat memelih tipe barang/jasa
+- User tidak bisa menginputkan selain angka di kolom jumlah dan harga
 
 ## How Does it Works?
 
-Diawali dari method `MainWindow` pada class `MainWindow.xaml.cs`, kita mendeklarasikan menjadi......
+Setelah pendeklarasian pada `Item.cs`, dilanjutkan dengan penginisialisasian seluruh bahan sebagai media yang nantinya akan menjadi perwakilan dari variable yang akan diinputkan oleh pengguna.
 
 ```csharp
 public MainWindow()
         {
             InitializeComponent();
-            currency = new CurrencyController();
+            calculator = new Calculator();
+            listBox.ItemsSource = calculator.getListItem();
         }
 ```
 
-logika perhitungan terdapat pada class `CurrencyController.cs` sebagai berikut cara kerjanya.......
+Inisialisasi List dan Perhitungan Barang dan Jesa terdapat pada class `Item.cs` sebagai berikut
 
 ```csharp
 public string usdToIdr(string nominal)
