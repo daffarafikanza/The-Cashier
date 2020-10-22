@@ -60,7 +60,8 @@ public MainWindow()
             calculator = new Calculator();
             listBox.ItemsSource = calculator.getListItem();
         }
-        
+```
+
 Dan akhir proses dari aplikasi kasir sederhana ini ada pada coding berikut
 
 ```csharp
